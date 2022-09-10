@@ -14,7 +14,7 @@ function draw() {
     objectDetector.detect(video, gotResult);
     for (i = 0; i < objects.length; i++) {
         document.getElementById("status").innerHTML = "Status : Object Detected";
-        document.getElementById("number_of_objects").innerHTML = "Number of objects Detected : " + objects.length;
+        document.getElementById("object").innerHTML = "Number of objects Detected : " + objects.length;
 
         fill("#FF0000");
         percent = floor(objects[i].confidence * 100);
@@ -46,7 +46,7 @@ status = ""
 
 
 function start() {
-    objectDetector = ml5.objectDetector('cocossd, modelLoaded');
+    objectDetector = ml5.objectDetector('cocossd', modelLoaded);
     document.getElementById("status").innerHTML = "status : Object Detecting";
     object_name = document.getElementById("object_name");
 }
